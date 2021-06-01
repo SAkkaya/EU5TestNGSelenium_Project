@@ -14,12 +14,12 @@ public class GetTitleAndUrl {
 
         WebDriver driver= new ChromeDriver();
 
-        driver.get("https://www.google.com");  // get ve navigate ikii de ayni sey
+        driver.get("https://www.google.com");  // get ve navigate iki de ayni sey
         driver.navigate().to("http://practice.cybertekschool.com");
 
         //getting title with selenium
         //shortcut for creating variable
-        //Option or ALT +enter enter
+        //Option or ALT + enter enter
         //getTitle()--> get you the titel of page
         String title = driver.getTitle(); //option+ENTER ==> variable name
 

@@ -9,7 +9,7 @@ public class CallWebDriverFactory {
     public static void main(String[] args) {
 
 
-        WebDriver driver = WebDriverFactory.getDriver("chrome");
+        WebDriver driver = WebDriverFactory.getDriver("chrome");    //WebDriverFactory==> Utility class
 
         driver.get("https://www.google.com");
 
