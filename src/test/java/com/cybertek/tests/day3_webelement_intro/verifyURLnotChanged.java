@@ -25,7 +25,7 @@ public class verifyURLnotChanged {
 
 
         //save expected url before clicking button
-        String expectedUrl = driver.getCurrentUrl();  // utona basmadan once
+        String expectedUrl = driver.getCurrentUrl();  // butona basmadan once
 
         // click on Retrieve password
         //WebElement --> Interface that represent elements on the webpage
@@ -45,10 +45,8 @@ public class verifyURLnotChanged {
         }else{
             System.out.println("FAIL");
         }
-
-
         // close your browser
-        driver.quit();
+       driver.quit();
 
     }
 
