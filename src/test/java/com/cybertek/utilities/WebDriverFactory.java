@@ -25,7 +25,7 @@ public class WebDriverFactory {
 
         switch (browserType.toLowerCase()) {
             case "chrome":
-                WebDriverManager.chromedriver().setup();
+                WebDriverManager.chromedriver().setup();  // selenium kodu
                 driver = new ChromeDriver();
                 break;
 

@@ -9,7 +9,11 @@ public class classNameTest {
 
     public static void main(String[] args) {
 
-        WebDriver driver = WebDriverFactory.getDriver("chrome");
+       WebDriver driver = WebDriverFactory.getDriver("chrome");
+
+//         WebDriverFactory w1= new WebDriverFactory();      // eger WebDriver Factory static olmasa idi class ismi yerine obje yaratip obje ismi
+        //w1.getDriver("chrome");                                               //   ile cagircagiracktik
+
         driver.get("http://practice.cybertekschool.com/sign_up");
 
 
