@@ -72,5 +72,6 @@ public class XpathPractices {
                 System.out.println("expected Message = " + "Your e-mail's been sent!");
             }
 
+        driver.quit();
     }
 }
