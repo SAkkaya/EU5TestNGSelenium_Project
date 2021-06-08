@@ -18,25 +18,30 @@ public class AmazonTest {
     public static void main(String[] args) throws InterruptedException {
 
         WebDriver driver= WebDriverFactory.getDriver("chrome");
-        driver.get("https://www.amazon.de/?language=de_DE");
-        driver.manage().window().maximize();
+        driver.get("https://www.amazon.com/");
         WebElement searchBox= driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
-        searchBox.click();
-        searchBox.sendKeys("Java");
-        driver.findElement(By.xpath("//input[@value='Los']")).click();
-        // WebElement selenium =  driver.findElement(By.xpath("//h1/div/div/div/div/span[1]"));
-        WebElement javaSearchResult =  driver.findElement(By.xpath("//span[contains(text(),'Vorschlägen für')]"));
+        //driver.manage().window().maximize();
 
-        String actualResult=javaSearchResult.getText();
-        System.out.println("actualText = " + actualResult);
-        String expectedResult= "1-16 von mehr als 30.000 Ergebnissen oder Vorschlägen für";
+        searchBox.sendKeys("Selenium");
 
-        if (actualResult.equals(expectedResult)){
+        //click search button
+        driver.findElement(By.xpath("//input[@value='Go']")).click();
+//            driver.findElement(By.xpath("(//input[@type='submit'])[1]"));
+//            driver.findElement(By.xpath("//span[@id='nav-search-submit-text']/input);
+
+        WebElement result =  driver.findElement(By.xpath("//span[contains(text(),'results for')]"));
+
+        String resultText=result.getText();
+        System.out.println("resultText = " + resultText);
+
+        String expectedResult= "1-48 of 185 results for";
+
+        if (expectedResult.equals(resultText)){
             System.out.println("PASS");
         }else{
             System.out.println("FAIL");
             System.out.println("expectedText = " + expectedResult);
-            System.out.println("actualText = " + actualResult);
+            System.out.println("resultText = " + resultText);
         }
         Thread.sleep(2000);
         driver.quit();
