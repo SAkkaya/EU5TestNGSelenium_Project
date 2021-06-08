@@ -16,7 +16,7 @@ public class TestNGAssertionsDemo {
     public void test1(){
 
         System.out.println("First Assertion");  // if 1.Test Fail, it will not proceed the next follow up tests
-        Assert.assertEquals("title", "tiTle");
+        Assert.assertEquals("title", "title");
 
         System.out.println("Second Assertion");
         Assert.assertEquals("url", "url");
