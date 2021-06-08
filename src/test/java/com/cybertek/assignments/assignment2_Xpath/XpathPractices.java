@@ -1,5 +1,12 @@
 package com.cybertek.assignments.assignment2_Xpath;
-/*
+
+import com.cybertek.utilities.WebDriverFactory;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class XpathPractices {
+    /*
 1. Open Chrome browser
 2. Go to http://practice.cybertekschool.com/forgot_passwordLinks to an external site.
 3. Locate all the WebElements on the page using XPATH locator only (total of 6)
@@ -10,15 +17,6 @@ package com.cybertek.assignments.assignment2_Xpath;
    e. “Retrieve password” button
 4.Print text of a,b,c,e and put some email to d
  */
-
-import com.cybertek.utilities.WebDriverFactory;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
-import org.testng.annotations.Test;
-
-public class XpathPractices {
 
     public static void main(String[] args) {
 
@@ -43,7 +41,6 @@ public class XpathPractices {
 //        e. “Retrieve password” button
         WebElement retrieveButton=driver.findElement(By.xpath("//button[@id='form_submit']"));
 
-
 //        4.Print text of a,b,c,e
         //Print text of a
         String homeLinkText = homeLink.getText();
@@ -66,7 +63,6 @@ public class XpathPractices {
         retrieveButton.click();
         String confirmationMessage=driver.findElement(By.xpath("//h4[@name='confirmation_message']")).getText();
 
-
             if(confirmationMessage.equals("Your e-mail's been sent!")){
                 System.out.println("PASS");
                 System.out.println("confirmation Message = " + confirmationMessage);
@@ -75,10 +71,6 @@ public class XpathPractices {
                 System.out.println("confirmation Message = " + confirmationMessage);
                 System.out.println("expected Message = " + "Your e-mail's been sent!");
             }
-
-
-
-
 
     }
 }
