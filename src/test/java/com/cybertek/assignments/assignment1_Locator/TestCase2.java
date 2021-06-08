@@ -1,4 +1,4 @@
-package com.cybertek.tests.assignments;
+package com.cybertek.assignments.assignment1_Locator;
 
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
