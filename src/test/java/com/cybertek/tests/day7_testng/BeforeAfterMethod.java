@@ -11,7 +11,7 @@ public class BeforeAfterMethod {
     }
 
 
-    @Test  // @ ==> Annonation
+    @Test  // @ ==> Annotation
     public void test1(){
         System.out.println("First Test Case");
     }

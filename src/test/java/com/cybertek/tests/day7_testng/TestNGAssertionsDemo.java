@@ -25,11 +25,36 @@ public class TestNGAssertionsDemo {
 
     @Test
     public void test2(){
-       Assert.assertEquals("test2", "test2");
+
+       Assert.assertEquals("test2", "test22", "verify test2");
+    }
+
+    @Test
+    public void test3(){
+       String expectedTitle ="Cyt";
+       String actualTitle = "Cybertek";
+           Assert.assertTrue(actualTitle.startsWith(expectedTitle), "Verify title starts with Cyb");
+    }
+
+    @Test
+    public void test4() {
+       // verify email contains @ sign
+        String email = "mike@smith.com";
+        Assert.assertTrue(email.contains("@"),"verify email contains @");
+    }
+
+    @Test
+    public void test5(){
+       Assert.assertFalse(1>0,"verify that 0 is not greater than 1");
+    }
+
+    @Test
+    public void test6(){
+       Assert.assertNotEquals("one", "two");
     }
 
     @AfterMethod
-    public void tearDown(){
+    public void tearDown() {
         System.out.println("Close Browser");
     }
 

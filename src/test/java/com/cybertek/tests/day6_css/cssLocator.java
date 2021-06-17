@@ -15,9 +15,8 @@ public class cssLocator {
 
         WebElement dontClick= driver.findElement(By.cssSelector("#disappearing_button"));
 
-        System.out.println("dontClick button Text = " + dontClick.getText());
+        System.out.println("dont Click button Text = " + dontClick.getText());
                           //dontClick button Text = Don't click!
-        driver.quit();
 
 
 
