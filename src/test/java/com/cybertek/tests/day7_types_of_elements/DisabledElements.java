@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class DisabledElements {
 
     @Test
-    public void TEst1(){
+    public void Test1(){
 
         WebDriver driver= WebDriverFactory.getDriver("Chrome");
         driver.manage().window().maximize();
@@ -38,8 +38,7 @@ public class DisabledElements {
         WebElement inputBox= driver.findElement(By.cssSelector("#input-example>input"));
         inputBox.sendKeys("some message"); //ElementNotInteractableException: element not interactable
 
-
-
+        //Assert.assertFalse(driver.findElement(By.cssSelector("#input-example>[type='text']")).isEnabled());
 
     }
 

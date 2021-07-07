@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 
 public class VerifyConfirmationMassage {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         /*
     Verify confirmation message
@@ -51,9 +51,10 @@ public class VerifyConfirmationMassage {
 
         //click on Retrieve password
         WebElement retrievePasswordButton = driver.findElement(By.id("form_submit"));
+        Thread.sleep(2000);
         retrievePasswordButton.click();
 
-
+        Thread.sleep(2000);
         //verify that confirmation message says 'Your e-mail's been sent!'
 
         WebElement actualConfirmationMessage = driver.findElement(By.name("confirmation_message"));

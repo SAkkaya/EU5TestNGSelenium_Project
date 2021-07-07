@@ -30,7 +30,7 @@ public class ListOfElements {
 
 
     @Test
-    public void test1(){
+    public void test1() {
         driver.get("http://practice.cybertekschool.com/multiple_buttons");
 
         //save our web elements inside the list
@@ -38,18 +38,38 @@ public class ListOfElements {
 
         System.out.println("buttons.size() = " + buttons.size()); //buttons.size() = 6
 
-        //"verify button size
-        Assert.assertEquals(buttons.size(),6,"verify button size ");
+        //"verify button size    ****** verify size number is ve ry important to get the test successfully pass
+        Assert.assertEquals(buttons.size(), 6, "verify button size ");
 
 
         for (WebElement button : buttons) {
-            System.out.println(button.getText());
+            // System.out.println(button.getText());
+            System.out.println("button.isDisplayed() = " + button.isDisplayed());
+            Assert.assertTrue(button.isDisplayed(), "verify buttons are displayed");
         }
-        
 
+        //click second button
+        buttons.get(1).click();
+    }
 
+    @Test
+    public void test2(){
+        driver.get("http://practice.cybertekschool.com/multiple_buttons");
+        //regular find Element method will throw NSE idf loctor does not exist
+       // driver.findElement(By.tagName("buttonsajjaajjäaas"));
+        //no such element: Unable to locate element: {"method":"css selector","selector":"buttonsajjaajjäaas"}
+
+        //passing locator which does not exist, it will not throw NoSuchElement
+        //ALT+Enter or OPTION+Enter then one more enter for the shortcut
+        List<WebElement> buttons = driver.findElements(By.tagName("buttonsajjaajjäaas"));
+        //Total tests run: 1, Passes: 1, Failures: 0, Skips: 0  ==> test passes olur cunku boyle bir element olmadigi icin size=0 olur
+
+        System.out.println("buttons.size() = " + buttons.size()); //buttons.size() = 0
 
     }
+
+
+
 
 
 }

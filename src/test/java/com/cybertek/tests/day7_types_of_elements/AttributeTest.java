@@ -18,6 +18,7 @@ public class AttributeTest {
 
         WebElement blueRadioBtn = driver.findElement(By.id("blue"));
         blueRadioBtn.getAttribute("value");
+        System.out.println(blueRadioBtn.getAttribute("value")); //on
 
         // get the value of type attribute
         System.out.println(blueRadioBtn.getAttribute("type")); //radio

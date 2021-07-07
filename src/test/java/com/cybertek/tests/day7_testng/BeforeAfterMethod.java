@@ -15,9 +15,10 @@ public class BeforeAfterMethod {
     public void test1(){
         System.out.println("First Test Case");
     }
+
     //Comment or Ignore
-   // @Test
-   // @Ignore
+    @Test
+    //@Ignore
     public void test2(){
         System.out.println("Second Test Case");
     }
