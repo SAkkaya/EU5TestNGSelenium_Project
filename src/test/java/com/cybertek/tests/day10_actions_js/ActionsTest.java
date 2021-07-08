@@ -81,6 +81,33 @@ public class ActionsTest {
 
 
 
+    @Test
+    public void dragAndDropChaining() throws InterruptedException {
+
+        driver.get("https://demos.telerik.com/kendo-ui/dragdrop/index");
+        driver.manage().window().maximize();
+
+        Actions actions = new Actions(driver);
+
+        // findElements will not throw NoSuch element exception, if it cannot find element, only return an empty List so we use List and findlements
+        List<WebElement> acceptAndClose = driver.findElements(By.xpath("//*[.='Accept and Close']"));
+        List<WebElement> acceptCookies= driver.findElements(By.xpath("//*[.='Accept Cookies']"));
+        Thread.sleep(1000);
+        if (acceptAndClose.size()>0){
+            acceptAndClose.get(0).click();
+        }else if (acceptCookies.size()>0){
+            acceptCookies.get(0).click();
+        }
+
+
+        WebElement source = driver.findElement(By.id("draggable"));
+        WebElement target = driver.findElement(By.id("droptarget"));
+        Thread.sleep(2000);
+        actions.moveToElement(source).clickAndHold().moveToElement(target).pause(2000).release().perform();
+
+
+    }
+
 
 
 
