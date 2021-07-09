@@ -4,6 +4,7 @@ import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -130,12 +131,38 @@ public class TestScripts {
 //        Step 7. Enter any valid phone number.
         driver.findElement(By.name("phone")).sendKeys("582-555-5000");
 //        Step 8. Select gender.
-
+        List<WebElement> elementList = driver.findElements(By.xpath("//input[@type='radio']"));
+        System.out.println("elementList.size() = " + elementList.size());
+        elementList.get(0).click();
 //        Step 9. Enter any valid date of birth.
+        driver.findElement(By.name("birthday")).sendKeys("05/13/2013");
+
 //        Step 10. Select any department.
+
+        WebElement department= driver.findElement(By.name("department"));
+        Select dropdown= new Select(department);
+        dropdown.selectByValue("TO");
+
+        String expectedOption="Tourism Office";
+        String actualOption=dropdown.getFirstSelectedOption().getText();
+        Assert.assertEquals(actualOption,expectedOption,"verify first selection");
+
 //        Step 11. Enter any job title.
+
+        WebElement job_title= driver.findElement(By.name("job_title"));
+        Select dropdownJobTitle= new Select(job_title);
+        dropdownJobTitle.selectByVisibleText("QA");
+
+        String expectedTitle="QA";
+        String actualTitle=dropdownJobTitle.getFirstSelectedOption().getText();
+        Assert.assertEquals(actualOption,expectedOption,"verify first selection");
+
+
 //        Step 12. Select java as a programming language.
+
 //        Step 13. Click Sign up.
+
+
 //        Step 14. Verify that following success message is displayed: “You've successfully completed registration!”
 
 
