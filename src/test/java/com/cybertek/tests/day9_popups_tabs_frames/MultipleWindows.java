@@ -27,7 +27,7 @@ public class MultipleWindows {
     }
 
     @Test
-    public void SwitchWindowsTest() throws InterruptedException {
+    public void SwitchWindowsTest() throws InterruptedException {       // 2 window acik ise sadece
 
         driver.get("http://practice.cybertekschool.com/windows");
 
@@ -39,18 +39,18 @@ public class MultipleWindows {
         System.out.println("Title after new window:"+driver.getTitle()); //Practice
 
        // System.out.println("driver.getWindowHandle() = " + driver.getWindowHandle());
-
+                                            // returns a unique code for current window
         System.out.println(driver.getWindowHandle());  //hashSet windowlar icin ayrilmis ozel id numarasi veriyor
                                                             //CDwindow-6CE8885BBA8FB4738A36921B51E06338
         String currentWindowHandle = driver.getWindowHandle();
 
-        Set<String> windowHandles = driver.getWindowHandles();
+        Set<String> windowHandles = driver.getWindowHandles(); // butun acik windowlari store ediyor
 
 
         for (String handle : windowHandles) {
 //            System.out.println(driver.getWindowHandle());
 //            driver.switchTo().window(handle);
-            if(!handle.equals(currentWindowHandle)){
+            if(!handle.equals(currentWindowHandle)){    // eger current window um degilse digerine switch et
                 driver.switchTo().window(handle);
             }
         }
@@ -75,7 +75,7 @@ public class MultipleWindows {
         //loop through each window
         for (String handle : windowHandles) {
             //one by one change it
-            driver.switchTo().window(handle);
+            driver.switchTo().window(handle); // one by one switch ediyor
 
             //whenever your title equals to your expected window title
             if(driver.getTitle().equals("New Window")){

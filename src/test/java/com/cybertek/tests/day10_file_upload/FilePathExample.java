@@ -16,7 +16,7 @@ public class FilePathExample {
 
         String projectPath = System.getProperty("user.dir");
 
-       // textfile.txt  uzerine gelip --> ( right click()/ copy path/ path from content root )
+       // textfile.txt  uzerine gelip --> ( right click() + OPTION   ==> / copy path/ path from content root )
         String filePath = "src/test/resources/textfile.txt"; // bunun basinda /  koymamiz gerekiyor
 
         String fullPath= projectPath + "/" + filePath;

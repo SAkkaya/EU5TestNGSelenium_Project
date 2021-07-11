@@ -16,16 +16,13 @@ public class ActionsTest {
 
     WebDriver driver;
 
-
     @BeforeMethod
     public void setUp() {
         driver = WebDriverFactory.getDriver("chrome");
-
     }
 
     @AfterMethod
     public void tearDown() throws InterruptedException {
-
         Thread.sleep(2000);
         driver.quit();
     }
@@ -75,10 +72,7 @@ public class ActionsTest {
 
         Thread.sleep(2000);
         actions.dragAndDrop(source, target).perform();
-
-
     }
-
 
 
     @Test
@@ -99,19 +93,12 @@ public class ActionsTest {
             acceptCookies.get(0).click();
         }
 
-
         WebElement source = driver.findElement(By.id("draggable"));
         WebElement target = driver.findElement(By.id("droptarget"));
         Thread.sleep(2000);
         actions.moveToElement(source).clickAndHold().moveToElement(target).pause(2000).release().perform();
 
-
     }
-
-
-
-
-
 
 
 }

@@ -53,7 +53,7 @@ public class FileUploadTest {
         WebElement chooseFile = driver.findElement(By.name("file"));
         //sending file with sendKeys method
         String projectPath = System.getProperty("user.dir");
-        String filePath = "src/test/resources/textfile.txt";
+        String filePath = "src/test/resources/textfile.txt";  //Resources altinda textfile.txt ye gel sag click copy path
         String fullPath= projectPath + "/" + filePath;
         //chooseFile.sendKeys("/Users/sadik/Desktop/file.txt");  //Bu desktop daki file idi bunun yerine dinamik yaptik asagida
         chooseFile.sendKeys(fullPath);

@@ -17,8 +17,8 @@ public class ImplicitWaitExample {
     @BeforeMethod
     public void setUp(){
         driver= WebDriverFactory.getDriver("chrome");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); //up to 30 seconds
+        // whenever findelements triggered wait until 30 seconds before findelemnts method();
     }
 
     @AfterMethod

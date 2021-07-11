@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class TestScripts {
+public class TestCases_1_2_3_4_5_RegistrationFrom {
 
     WebDriver driver;
 
@@ -26,7 +26,7 @@ public class TestScripts {
     @AfterMethod
     public void tearDown() throws InterruptedException {
         Thread.sleep(2000);
-      //  driver.quit();
+        driver.quit();
     }
 
     @Test
@@ -64,7 +64,7 @@ public class TestScripts {
         List<WebElement> programmingLanguages = driver.findElements(By.className("form-check-label"));
 
         for (WebElement programmingLanguage : programmingLanguages) {
-            Assert.assertTrue(programmingLanguage.isDisplayed(), "Verify that following options for programming languages are displayed: c++, java,JavaScript");
+            Assert.assertTrue(programmingLanguage.isDisplayed(), "Verify that following options for programming languages are displayed");
             System.out.println("programmingLanguage = " + programmingLanguage.getText());
         }
     }
@@ -160,11 +160,23 @@ public class TestScripts {
 
 //        Step 12. Select java as a programming language.
 
+        List<WebElement> checkBoxes = driver.findElements(By.cssSelector(".form-check-input"));
+        System.out.println("checkBoxes.size() = " + checkBoxes.size());
+        for (int i = 0; i < 3; i++) {
+            checkBoxes.get(1).click();
+        }
+        Assert.assertTrue(checkBoxes.get(1).isSelected(), "verify that java as a programming language is selected.");
 //        Step 13. Click Sign up.
 
+        driver.findElement(By.id("wooden_spoon")).click();
 
 //        Step 14. Verify that following success message is displayed: “You've successfully completed registration!”
 
+        String expectedMessage = "You've successfully completed registration!";
+
+        String actualMessage = driver.findElement(By.cssSelector("div p")).getText();
+
+        Assert.assertEquals(actualMessage,expectedMessage, "Verify that following success message is displayed");
 
     }
 

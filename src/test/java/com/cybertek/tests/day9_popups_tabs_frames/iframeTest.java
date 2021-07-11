@@ -8,9 +8,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
 
-public class iframeTest {
+public class iframeTest {     //if there are multiple HTML s
 
     WebDriver driver;
 
@@ -53,7 +52,7 @@ public class iframeTest {
         driver.findElement(By.cssSelector("#tinymce")).sendKeys("Mike Smith WITH INDEX");
 
         //second way to switch parent
-        driver.switchTo().parentFrame(); // it goes to one parent up not all the way back to,
+        driver.switchTo().parentFrame(); // it goes to only one parent up not all the way back to,
                                         //grand parent like driver.switchTo().defaultContent();
 
         //3.way USING WEBELEMENT
@@ -66,6 +65,22 @@ public class iframeTest {
         Thread.sleep(1000);
         driver.findElement(By.cssSelector("#tinymce")).sendKeys("Mike Smith WITH WEBELEMENT");
     }
+
+    //html
+            //top
+                 //left
+                 //middle
+                     //firstframe
+                             //secondframe
+                 //right
+            //bottom
+
+
+        /*
+        We can switch one at a time, cannot switch to grandchild directly.
+·       We cannot switch to siblings.
+·       We can only switch from parent to child, or from child to parent.
+         */
 
 
     @Test
