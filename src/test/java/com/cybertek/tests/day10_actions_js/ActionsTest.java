@@ -96,6 +96,7 @@ public class ActionsTest {
         WebElement source = driver.findElement(By.id("draggable"));
         WebElement target = driver.findElement(By.id("droptarget"));
         Thread.sleep(2000);
+
         actions.moveToElement(source).clickAndHold().moveToElement(target).pause(2000).release().perform();
 
     }
