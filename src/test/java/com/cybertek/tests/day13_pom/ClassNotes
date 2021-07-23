@@ -2,7 +2,9 @@ Class Notes-20
 
 Page Object Model
 
-Page Object Model --> this is a design pattern that enhances the ease of maintenance and reusability. It is a class that mirrors the behavior and object(web elements) of a webpage from the app. In page object model we create classes that serve as an object repository.
+Page Object Model --> this is a design pattern that enhances the ease of maintenance and reusability.
+It is a class that mirrors the behavior and object(web elements) of a webpage from the app.
+In page object model we create classes that serve as an object repository.
 
 How to create Pom ?
 Create a new package
@@ -26,7 +28,7 @@ PageFactory --> is class in selenium using which we can create page object model
 
 
 @FindAll --> gives us option to use multiple locators, if at least one of them is matching it will find the web element
-
+               -->  OR logic applies here.
 @FindAll({
 @FindBy(id = "prependedInput"),
 @FindBy(name ="_username")

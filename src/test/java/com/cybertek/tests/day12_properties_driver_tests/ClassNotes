@@ -6,7 +6,7 @@ new WebDriverFactory
 
 
 What is Automation Framework ?
-Automation framework is integrated system, organozation of packages, files, classes, tools in a way that it makes writing and maintaning automated tests easy. Good framework must be easy to maintain, easy to use, easy to scale, reasuable, report.
+Automation framework is integrated system, organization of packages, files, classes, tools in a way that it makes writing and maintaning automated tests easy. Good framework must be easy to maintain, easy to use, easy to scale, reasuable, report.
 ======================================
 Properties file
 
