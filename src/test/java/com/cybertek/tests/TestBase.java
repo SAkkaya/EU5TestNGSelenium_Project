@@ -27,12 +27,14 @@ public class TestBase {
                                                                                     //TimeOUT exception veriri
         driver.get(ConfigurationReader.get("url"));
 
+      //  Driver.get().get(ConfigurationReader.get("url")); ==> bu da olurdu
+
     }
 
     @AfterMethod
     public void tearDown() throws InterruptedException {
         Thread.sleep(2000);
-        Driver.closeDriver();
+//        Driver.closeDriver();
     }
 
 }

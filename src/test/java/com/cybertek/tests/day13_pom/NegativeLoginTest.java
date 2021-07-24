@@ -10,10 +10,13 @@ import org.testng.annotations.Test;
 
 public class NegativeLoginTest extends TestBase {
 
+
+    LoginPage loginPage = new LoginPage();  //class seviyesinde olusturursak asagidakilere gerek yok
+
     @Test
     public void wrongPasswordTest(){
 
-        LoginPage loginPage = new LoginPage();
+//        LoginPage loginPage = new LoginPage();
 
         loginPage.usernameInput.sendKeys("user1");
         loginPage.passwordInput.sendKeys("somepassword");
@@ -31,7 +34,7 @@ public class NegativeLoginTest extends TestBase {
     @Test
     public  void wrongUsernameTest(){
 
-        LoginPage loginPage = new LoginPage();
+//        LoginPage loginPage = new LoginPage();
         loginPage.usernameInput.sendKeys("someusername");
         loginPage.passwordInput.sendKeys("UserUser123");
         loginPage.loginBtn.click();

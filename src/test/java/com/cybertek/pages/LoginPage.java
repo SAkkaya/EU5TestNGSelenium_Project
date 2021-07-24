@@ -20,6 +20,7 @@ public class LoginPage {  //we are gonna keep our locaters and methods in this p
     // Driver.get() ++. same object during the rinTime, everywher in your application
     //this => pointing the element in this page,and representing each @annotations that i am using in this class
 
+                        //this-> go to this => ( Driver.get()) page
     public LoginPage(){ PageFactory.initElements(Driver.get(),this);    //PageFactory class allows us to use @findBy annotation, basically structure
                 // bunu direk POM page lere kopyalayacagiz daha sonra
     }

@@ -93,18 +93,26 @@ public class RepeatOptionsTests extends TestBase {
         // Click on repeat
         createCalendarEventsPage.repeat.click();
 
+      //  Select repetsDropdown =new Select(repeatOptions);
         Select repeatsDropdown = createCalendarEventsPage.repeatOptionsList();
+        //eger Select olmasi ise findelements   den bulacaktik
 
         // Verify that repeat options are Daily, Weekly, Monthly,Yearly(in this order)
-        List<String> expectedList = Arrays.asList("Daily","Weekly","Monthly","Yearly");
+        List<String> expectedList = Arrays.asList("Daily","Weekly","Monthly","Yearly");   //Arrays.asList= > liste olarak add() yapiyiruz tek tek degil
 
         List<String> actualList = new ArrayList<>();
 
-        List<WebElement> actualOptions = repeatsDropdown.getOptions();
+        List<WebElement> actualOptions = repeatsDropdown.getOptions(); // getOptions()=> WebElement olarak atiyoruz
         for (WebElement option : actualOptions) {
             //get text of each element and add to actual List
             actualList.add(option.getText());
+            System.out.println("option = " + option.getText());
         }
+
+
+        System.out.println(actualList);
+
+
         //ready method for getting text of list of web elements
         List<String> actualList2 = BrowserUtils.getElementsText(actualOptions);
         //Verify that repeat options are Daily, Weekly, Monthly,Yearly(in this order)

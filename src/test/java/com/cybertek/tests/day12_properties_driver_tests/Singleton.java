@@ -5,7 +5,7 @@ public class Singleton {
     //singleton class will have private constructor
     //it means other classes cannot create object of this class
 
-    private Singleton(){}  //private constructor
+    private Singleton(){}  //private constructor  , i want to create only one driver
 
     private static String str;
 

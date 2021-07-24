@@ -17,7 +17,7 @@ import java.util.Date;
 import java.util.List;
 
 
-public class BrowserUtils {
+public class BrowserUtils {     //selenium tools , mouse actions
     /*
      * takes screenshot
      * @param name

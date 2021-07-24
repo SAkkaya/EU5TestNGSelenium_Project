@@ -8,7 +8,7 @@ import java.util.Properties;
  */
 public class ConfigurationReader {
 
-    private static Properties properties;
+    private static Properties properties; //instance variable
 
     static {  // static bloc cunku it runs before everytihing  ++>  we are gona load the information one time and we will get the information with the method below(public static String get(String keyName) )
 
@@ -20,8 +20,9 @@ public class ConfigurationReader {
             // properties --> class that store properties in key / value format
             properties = new Properties();  //creating object from Properties Class
             // the values from the file input is loaded / fed in to the properties object
-            properties.load(input); // properties object has load() method that takes and loads key and values from Configuration Reader file
 
+            properties.load(input); // properties object has load() method that takes and loads key and values from Configuration Reader fil//lad
+            //load store th data
             input.close();
         } catch (Exception e) {
             e.printStackTrace();

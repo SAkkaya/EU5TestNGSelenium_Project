@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage {   //we put the common methods and locators,   abstract class so we cannot create an object here
-
+                            //BasePage in icine heryerden (About us ve other pagelerden ulasabildigimiz common WebElementleri atiyoruz)
     @FindBy(css = "div[class='loader-mask shown']")
     @CacheLookup
     protected WebElement loaderMask;
@@ -30,7 +30,7 @@ public abstract class BasePage {   //we put the common methods and locators,   a
     public WebElement myUser;
 
     public BasePage() {
-        PageFactory.initElements(Driver.get(), this);
+        PageFactory.initElements(Driver.get(), this); //PageFactory helps us to use Singleton principles
     }
 
 
@@ -89,8 +89,13 @@ public abstract class BasePage {   //we put the common methods and locators,   a
      * @param module
      */
     public void navigateToModule(String tab, String module) {   //tab - > manu bar  ; module-> sunmenu under menu bar
+
+        //span[@class='title title-level-1' and contains(text(),'Fleet')]
+
         String tabLocator = "//span[normalize-space()='" + tab + "' and contains(@class, 'title title-level-1')]";
+//        String tabLocator2 = "//span[@class='title title-level-1' and contains(text(),'" + tab + "')]";
         String moduleLocator = "//span[normalize-space()='" + module + "' and contains(@class, 'title title-level-2')]";
+//        String moduleLocator2 = "//span[@class='title title-level-2' and contains(text(),'" + module + "')]";
         try {
             BrowserUtils.waitForClickablility(By.xpath(tabLocator), 5);
             WebElement tabElement = Driver.get().findElement(By.xpath(tabLocator));
