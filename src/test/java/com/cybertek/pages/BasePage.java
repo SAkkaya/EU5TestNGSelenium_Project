@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+// abstract cunku object yaratmak istemiyorum baska classda sadece burda arak plani bilmemizi codun nasil clistigini abstarct class da umursama diyor
 public abstract class BasePage {   //we put the common methods and locators,   abstract class so we cannot create an object here
                             //BasePage in icine heryerden (About us ve other pagelerden ulasabildigimiz common WebElementleri atiyoruz)
     @FindBy(css = "div[class='loader-mask shown']")
@@ -29,7 +30,7 @@ public abstract class BasePage {   //we put the common methods and locators,   a
     @FindBy(linkText = "My User")
     public WebElement myUser;
 
-    public BasePage() {
+    public BasePage() {  //costructor
         PageFactory.initElements(Driver.get(), this); //PageFactory helps us to use Singleton principles
     }
 

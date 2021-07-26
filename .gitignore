@@ -1,5 +1,6 @@
-# Project exclude paths
-/target/
+# Project exclude paths  -target => classs i run ettigimizde cikiyor   / resources icinde output varsa .ignore a koyuyouz   , eger alacagimiz input varsa kullanacagimiz koyuyoruz
 /idea/
 *.iml
 /src/test/resources/
+/target/
+
