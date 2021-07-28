@@ -37,13 +37,13 @@ public class TestCases_9_10_11_12_StatusCodes {
         driver.findElement(By.linkText("Status Codes")).click();
 
 //      Step 3. Then click on “200”, 301. 404, 500
-//      Step 4. Verify that following message is displayed:“This page returned a 200 status code”
+//      Step 4. VerifyContactInformationTest that following message is displayed:“This page returned a 200 status code”
         for (int i = 1; i <= 4; i++) {
 
         driver.findElement(By.xpath("(//div[@class='example']//ul/li/a)["+i+"]")).click();
         WebElement message = driver.findElement(By.xpath("//div[@class='example']/p"));
         System.out.println("message.getText() = " + message.getText());
-        Assert.assertTrue(message.isDisplayed(), "Verify that following message is displayed: " + message.getText());
+        Assert.assertTrue(message.isDisplayed(), "VerifyContactInformationTest that following message is displayed: " + message.getText());
         driver.navigate().back();
 
         }

@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class verifyURLnotChanged {
 
     public static void main(String[] args) {
-        /*Verify URL not changed
+        /*VerifyContactInformationTest URL not changed
 	    -open chrome browser
 	    -go to http://practice.cybertekschool.com/forgot_password Links to an external site.
 	    -click on Retrieve password

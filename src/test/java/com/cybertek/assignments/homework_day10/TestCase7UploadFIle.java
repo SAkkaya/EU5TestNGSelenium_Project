@@ -48,18 +48,18 @@ public class TestCase7UploadFIle {
 
         driver.findElement(By.id("file-submit")).click();
 
-//        Step 5. Verify that subject is: “File Uploaded!”
+//        Step 5. VerifyContactInformationTest that subject is: “File Uploaded!”
 
        String actualSubject = driver.findElement(By.cssSelector("div h3")).getText();
        String expectedSubject= "File Uploaded!";
 
-        Assert.assertEquals(actualSubject,expectedSubject, "Verify that subject is: “File Uploaded!");
+        Assert.assertEquals(actualSubject,expectedSubject, "VerifyContactInformationTest that subject is: “File Uploaded!");
 
-//        Step 6. Verify that uploaded file name is displayed.
+//        Step 6. VerifyContactInformationTest that uploaded file name is displayed.
 
         boolean isFileDislayed = driver.findElement(By.id("uploaded-files")).isDisplayed();
 
-        Assert.assertTrue(isFileDislayed, "Verify that uploaded file name is displayed");
+        Assert.assertTrue(isFileDislayed, "VerifyContactInformationTest that uploaded file name is displayed");
 
 /*      Note: use element.sendKeys(“/file/path”) with
         specifying path to the file for uploading. Run this
@@ -94,18 +94,18 @@ public class TestCase7UploadFIle {
 
         driver.findElement(By.id("file-submit")).click();
 
-//        Step 5. Verify that subject is: “File Uploaded!”
+//        Step 5. VerifyContactInformationTest that subject is: “File Uploaded!”
 
         String actualSubject = driver.findElement(By.cssSelector("div h3")).getText();
         String expectedSubject= "File Uploaded!";
 
-        Assert.assertEquals(actualSubject,expectedSubject, "Verify that subject is: “File Uploaded!");
+        Assert.assertEquals(actualSubject,expectedSubject, "VerifyContactInformationTest that subject is: “File Uploaded!");
 
-//        Step 6. Verify that uploaded file name is displayed.
+//        Step 6. VerifyContactInformationTest that uploaded file name is displayed.
 
         boolean isFileDislayed = driver.findElement(By.id("uploaded-files")).isDisplayed();
 
-        Assert.assertTrue(isFileDislayed, "Verify that uploaded file name is displayed");
+        Assert.assertTrue(isFileDislayed, "VerifyContactInformationTest that uploaded file name is displayed");
 
 /*      Note: use element.sendKeys(“/file/path”) with
         specifying path to the file for uploading. Run this

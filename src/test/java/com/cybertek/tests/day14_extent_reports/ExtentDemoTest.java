@@ -57,7 +57,7 @@ public class ExtentDemoTest {
 
         extentLogger.info("Click Login");
 
-        extentLogger.info("Verify logged in");
+        extentLogger.info("VerifyContactInformationTest logged in");
 
         //pass() --> marks the test case as passed
         extentLogger.pass("TC123 is passed");

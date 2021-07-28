@@ -24,7 +24,7 @@ public class RepeatOptionsTests extends TestBase {
     Go to Activities->Calendar Events
     Click on create calendar events
     Click on repeat
-    Verify that repeat every days is checked
+    VerifyContactInformationTest that repeat every days is checked
     verify that repeat weekday is not checked
     * */
 
@@ -52,10 +52,10 @@ public class RepeatOptionsTests extends TestBase {
         // Click on repeat
         createCalendarEventsPage.repeat.click();
 
-        //Verify that repeat every days is checked
-        Assert.assertTrue(createCalendarEventsPage.days.isSelected(),"Verify repeat days is selected");
+        //VerifyContactInformationTest that repeat every days is checked
+        Assert.assertTrue(createCalendarEventsPage.days.isSelected(),"VerifyContactInformationTest repeat days is selected");
         //verify that repeat weekday is not checked
-        Assert.assertFalse(createCalendarEventsPage.weekday.isSelected(),"Verify weekday is not selected");
+        Assert.assertFalse(createCalendarEventsPage.weekday.isSelected(),"VerifyContactInformationTest weekday is not selected");
 
     }
 
@@ -66,7 +66,7 @@ public class RepeatOptionsTests extends TestBase {
         Go to Activities->Calendar Events
         Click on create calendar events button
         Click on repeat checkbox
-        Verify that repeat options are Daily, Weekly, Monthly,Yearly(in this order)
+        VerifyContactInformationTest that repeat options are Daily, Weekly, Monthly,Yearly(in this order)
      */
 
 
@@ -97,7 +97,7 @@ public class RepeatOptionsTests extends TestBase {
         Select repeatsDropdown = createCalendarEventsPage.repeatOptionsList();
         //eger Select olmasi ise findelements   den bulacaktik
 
-        // Verify that repeat options are Daily, Weekly, Monthly,Yearly(in this order)
+        // VerifyContactInformationTest that repeat options are Daily, Weekly, Monthly,Yearly(in this order)
         List<String> expectedList = Arrays.asList("Daily","Weekly","Monthly","Yearly");   //Arrays.asList= > liste olarak add() yapiyiruz tek tek degil
 
         List<String> actualList = new ArrayList<>();
@@ -115,8 +115,8 @@ public class RepeatOptionsTests extends TestBase {
 
         //ready method for getting text of list of web elements
         List<String> actualList2 = BrowserUtils.getElementsText(actualOptions);
-        //Verify that repeat options are Daily, Weekly, Monthly,Yearly(in this order)
-        Assert.assertEquals(actualList,expectedList,"Verify Daily weekly monthly yearly");
+        //VerifyContactInformationTest that repeat options are Daily, Weekly, Monthly,Yearly(in this order)
+        Assert.assertEquals(actualList,expectedList,"VerifyContactInformationTest Daily weekly monthly yearly");
 
     }
 

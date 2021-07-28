@@ -27,7 +27,7 @@ public class ChartAndCheckOut {
 //        6. Pick to color
 //        7. Click add to chart
 //        8. Click view cart & checkout
-//        9. Verify popup page’s subtotal and check out’s subtotal should be same
+//        9. VerifyContactInformationTest popup page’s subtotal and check out’s subtotal should be same
     }
 
 

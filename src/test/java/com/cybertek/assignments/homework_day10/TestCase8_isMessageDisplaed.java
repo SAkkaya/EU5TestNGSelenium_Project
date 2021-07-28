@@ -39,13 +39,13 @@ public class TestCase8_isMessageDisplaed {
 
         driver.findElement(By.name("myCountry")).sendKeys("United States of America");
 
-//        Step 4. Verify that following message is displayed:“You selected: United States of America”
+//        Step 4. VerifyContactInformationTest that following message is displayed:“You selected: United States of America”
 
         driver.findElement(By.cssSelector("[value='Submit']")).click();
         WebElement actualText = driver.findElement(By.cssSelector("#result"));
         System.out.println("actualText.getText() = " + actualText.getText());
 
-        Assert.assertTrue(actualText.isDisplayed(), "Verify that following message is displayed: You selected: United States of America");
+        Assert.assertTrue(actualText.isDisplayed(), "VerifyContactInformationTest that following message is displayed: You selected: United States of America");
 
     }
 

@@ -1,20 +1,74 @@
 package com.cybertek.tests;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.cybertek.utilities.BrowserUtils;
 import com.cybertek.utilities.ConfigurationReader;
 import com.cybertek.utilities.Driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-public class TestBase {
-
+public class TestBase {           // class  for not to repeat same methods, you can use another project , you can copy paste in another project
+                                //TestBase ==> independent from application
     protected WebDriver driver; //protected=> (public de olurdu, subchild public mor evisible olmasi gereken subchild) Login Test den erisimesi icin default yetmez o yuzden protected yaptik (ingeritence -extends olan class dan erisilmesi icin)
     protected Actions actions;
     protected WebDriverWait wait;
+
+    //this class is used for starting and building reports
+   protected ExtentReports report; //problem olursa static ekle
+   // protected static ExtentReports report;
+
+    //this class is used create HTML report file
+    protected ExtentHtmlReporter htmlReporter;
+    //protected static ExtentHtmlReporter htmlReporter; //problem olursa static ekle
+
+    //this will define a test, enables adding logs, authors, test steps
+    protected ExtentTest extentLogger;
+    //protected static ExtentTest extentLogger; //problem olursa static ekle
+
+    @BeforeTest
+    public void setUpTest(){
+
+        //initialize the class
+        report = new ExtentReports();
+
+        //create a report path
+        String projectPath = System.getProperty("user.dir");
+        String path = projectPath + "/test-output/report.html";  // report.html isimli report file i olusturacak kendisi,  => /test-output   bu da path i olacak
+
+        //bu alttaki 2 satiri ekler ve line 43 u komment e alirsak, yukardaki gibi override etmeyecek herseferinde, bu yuzden her seferinde yeni isimle yeni report hazirlar
+//        String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+//        String path = projectPath + "/test-output/+ report"+ date +".html";
+
+
+
+        //initialize the html reporter with the report path
+        htmlReporter = new ExtentHtmlReporter(path); // creating an object from Constructor and passing my path in it, i will save my report file in path( projectPath + "/test-output/report.html)
+
+        //attach the html report to report object
+        report.attachReporter(htmlReporter);  // creating connection my main object report to html report-file
+
+        //title in report
+        htmlReporter.config().setReportName("Vytrack Smoke Test");
+
+        //set environment information
+        report.setSystemInfo("Environment", "QA");
+        report.setSystemInfo("Browser", ConfigurationReader.get("browser"));
+        report.setSystemInfo("OS",System.getProperty("os.name"));
+
+    }
 
     @BeforeMethod
     public void SetUp(){
@@ -25,16 +79,42 @@ public class TestBase {
         actions = new Actions(driver);
         wait = new WebDriverWait(driver, 10); // aradigimiz sey htm de var locate edebilmisiz ama saafanin yuklemnmesini bekliyoruz aradigimiz seyi sayfada laoding edilmesii
                                                                                     //TimeOUT exception veriri
-        driver.get(ConfigurationReader.get("url"));
+        driver.get(ConfigurationReader.get("url")); // url i aciyoruz
 
       //  Driver.get().get(ConfigurationReader.get("url")); ==> bu da olurdu
 
     }
 
+    //ITestResult class describes the result of a test in TestNG
     @AfterMethod
-    public void tearDown() throws InterruptedException {
+    public void tearDown(ITestResult result) throws InterruptedException, IOException {
+        //if test fails
+        if (result.getStatus()==ITestResult.FAILURE){        //result.getStatus() => get the results of current executed test
+            // record the name of failed test case
+            extentLogger.fail(result.getName());
+
+            //take the screenshot and return location of screenshot
+            String screenShotPath= BrowserUtils.getScreenshot(result.getName()); //result.getName() => get the name of test cases
+
+            //add your screenshot to your report
+            extentLogger.addScreenCaptureFromPath(screenShotPath);
+
+            //capture the exception and put inside the report
+            extentLogger.fail(result.getThrowable()); // putting my exception of the fail into my report
+
+        }
+
         Thread.sleep(2000);
-//        Driver.closeDriver();
+        Driver.closeDriver();
     }
+
+
+
+    @AfterTest
+    public void tearDownTest(){
+        //this is when the report is actually created
+        report.flush();
+    }
+
 
 }

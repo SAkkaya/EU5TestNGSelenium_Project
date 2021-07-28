@@ -9,7 +9,7 @@ public class verifyURLChanged {
 
     public static void main(String[] args) throws InterruptedException {
 
-     /* Verify URL changed
+     /* VerifyContactInformationTest URL changed
         open chrome browser
         go to http://www.practice.cybertekschool.com/forgot_password Links to an external site.
         enter any email
