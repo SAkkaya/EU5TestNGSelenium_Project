@@ -33,7 +33,7 @@ public class TestNGAssertionsDemo {
     public void test3(){
        String expectedTitle ="Cyt";
        String actualTitle = "Cybertek";
-           Assert.assertTrue(actualTitle.startsWith(expectedTitle), "Verify title starts with Cyb");
+           Assert.assertTrue(actualTitle.startsWith(expectedTitle), "VerifyContactInformationTest title starts with Cyb");
     }
 
     @Test

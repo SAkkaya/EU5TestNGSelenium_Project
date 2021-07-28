@@ -23,18 +23,19 @@ public class BrowserUtils {     //selenium tools , mouse actions
      * @param name
      * take a name of a test and returns a path to screenshot takes
      */
-    public static String getScreenshot(String name) throws IOException {
+    public static String getScreenshot(String name) throws IOException {  //String name => pass the testcase name here as parameter
         // name the screenshot with the current date time to avoid duplicate name
-        String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+        String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date()); // will return dynamic string   , we add a time stamp => "yyyyMMddhhmmss"
         // TakesScreenshot ---> interface from selenium which takes screenshots
-        TakesScreenshot ts = (TakesScreenshot) Driver.get();
-        File source = ts.getScreenshotAs(OutputType.FILE);
-        // full path to the screenshot location
-        String target = System.getProperty("user.dir") + "/test-output/Screenshots/" + name + date + ".png";
-        File finalDestination = new File(target);
+        TakesScreenshot ts = (TakesScreenshot) Driver.get(); //Capture the screenshot and store it in the specified location.
+        File source = ts.getScreenshotAs(OutputType.FILE);  // Creating a File from screenshot and save this file in source
+        // full path to the screenshot location                              name => pass the testcase name ; .png  => screenshot extension
+        String target = System.getProperty("user.dir") + "/test-output/Screenshots/" + name + date + ".png"; //creating one more file (Screenshots) inside test-output/Screenshots/
+             // target ois a path here
+        File finalDestination = new File(target);    // creating an empthy .png file in this destination
         // save the screenshot to the path given
-        FileUtils.copyFile(source, finalDestination);
-        return target;
+        FileUtils.copyFile(source, finalDestination); //copy File from source finalDestination;   need to copy your screenshot you hold in the File source into the file  (finalDestination) has   name + date + ".png";
+        return target; //location (path) of screenshot
     }
 
     /**

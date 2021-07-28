@@ -38,7 +38,7 @@ public class TestCases_1_2_3_4_5_RegistrationFrom {
 //        Step 3. Enter “wrong_dob” into date of birth input box.
         WebElement dateOfBirth= driver.findElement(By.name("birthday"));
         dateOfBirth.sendKeys("19/05/2013");
-//        Step 4. Verify that warning message is displayed:“The date of birth is not valid”
+//        Step 4. VerifyContactInformationTest that warning message is displayed:“The date of birth is not valid”
         WebElement dobText=driver.findElement(By.xpath("//*[.='The date of birth is not valid']"));
         Boolean dobIsDisplayed=dobText.isDisplayed();
         System.out.println("dobIsDisplayed = " + dobIsDisplayed);
@@ -47,8 +47,8 @@ public class TestCases_1_2_3_4_5_RegistrationFrom {
         System.out.println("actualDOBText = " + actualDOBText);
 
         String expectedText = "The date of birth is not valid";
-        Assert.assertEquals(actualDOBText,expectedText,"Verify that warning message is matched");
-        Assert.assertTrue(dobIsDisplayed,"Verify that warning message is displayed:“The date of birth is not valid”");
+        Assert.assertEquals(actualDOBText,expectedText,"VerifyContactInformationTest that warning message is matched");
+        Assert.assertTrue(dobIsDisplayed,"VerifyContactInformationTest that warning message is displayed:“The date of birth is not valid”");
     }
 
     @Test
@@ -59,12 +59,12 @@ public class TestCases_1_2_3_4_5_RegistrationFrom {
 //        Step 2. Click on “Registration Form”
         driver.findElement(By.linkText("Registration Form")).click();
 
-//        Step 3. Verify that following options for programming languages are displayed: c++, java,JavaScript
+//        Step 3. VerifyContactInformationTest that following options for programming languages are displayed: c++, java,JavaScript
 
         List<WebElement> programmingLanguages = driver.findElements(By.className("form-check-label"));
 
         for (WebElement programmingLanguage : programmingLanguages) {
-            Assert.assertTrue(programmingLanguage.isDisplayed(), "Verify that following options for programming languages are displayed");
+            Assert.assertTrue(programmingLanguage.isDisplayed(), "VerifyContactInformationTest that following options for programming languages are displayed");
             System.out.println("programmingLanguage = " + programmingLanguage.getText());
         }
     }
@@ -79,11 +79,11 @@ public class TestCases_1_2_3_4_5_RegistrationFrom {
 //        Step 3. Enter only one alphabetic character into firstname input box.
           driver.findElement(By.name("firstname")).sendKeys("a");
 
-//        Step 4. Verify that warning message is displayed:“first name must be more than 2 and less than 64 characters long”
+//        Step 4. VerifyContactInformationTest that warning message is displayed:“first name must be more than 2 and less than 64 characters long”
 
             WebElement actualname = driver.findElement(By.xpath("(//small[@data-bv-validator='stringLength'])[1]"));
 
-            Assert.assertTrue(actualname.isDisplayed(), "Verify that warning message is displayed:");
+            Assert.assertTrue(actualname.isDisplayed(), "VerifyContactInformationTest that warning message is displayed:");
             String actualText = actualname.getText();
             System.out.println("actualText = " + actualText);
 
@@ -101,11 +101,11 @@ public class TestCases_1_2_3_4_5_RegistrationFrom {
 //        Step 3. Enter only one alphabetic character into last name input box.
         driver.findElement(By.name("lastname")).sendKeys("a");
 
-//        Step 4. Verify that warning message is displayed:“last name must be more than 2 and less than 64 characters long”
+//        Step 4. VerifyContactInformationTest that warning message is displayed:“last name must be more than 2 and less than 64 characters long”
 
         WebElement actuallastName = driver.findElement(By.xpath("(//small[@data-bv-validator='stringLength'])[2]"));
 
-        Assert.assertTrue(actuallastName.isDisplayed(), "Verify that warning message is displayed:");
+        Assert.assertTrue(actuallastName.isDisplayed(), "VerifyContactInformationTest that warning message is displayed:");
         String actuallastNameText = actuallastName.getText();
         System.out.println("actuallastNameText = " + actuallastNameText);
 
@@ -170,13 +170,13 @@ public class TestCases_1_2_3_4_5_RegistrationFrom {
 
         driver.findElement(By.id("wooden_spoon")).click();
 
-//        Step 14. Verify that following success message is displayed: “You've successfully completed registration!”
+//        Step 14. VerifyContactInformationTest that following success message is displayed: “You've successfully completed registration!”
 
         String expectedMessage = "You've successfully completed registration!";
 
         String actualMessage = driver.findElement(By.cssSelector("div p")).getText();
 
-        Assert.assertEquals(actualMessage,expectedMessage, "Verify that following success message is displayed");
+        Assert.assertEquals(actualMessage,expectedMessage, "VerifyContactInformationTest that following success message is displayed");
 
     }
 

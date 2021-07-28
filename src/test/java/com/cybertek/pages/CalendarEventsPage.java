@@ -7,7 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class CalendarEventsPage extends BasePage {
-/*          // Base page e extend ettigimiz icin bu Constructor a ihtiyacimiz yok simdi
+/*          // default constructor olusturacak, dafault constructor icinde de super() keyword oldugu icin otomatik olark
+                inherit edilen constructor icindede parametre olmadigi icin aldir direk
     public CalendarEventsPage() {
         PageFactory.initElements(Driver.get(), this);
     }

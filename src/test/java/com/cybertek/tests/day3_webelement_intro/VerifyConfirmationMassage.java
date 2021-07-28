@@ -10,7 +10,7 @@ public class VerifyConfirmationMassage {
     public static void main(String[] args) throws InterruptedException {
 
         /*
-    Verify confirmation message
+    VerifyContactInformationTest confirmation message
         open chrome browser
         go to http://practice.cybertekschool.com/forgot_password Links to an external site.
         enter any email

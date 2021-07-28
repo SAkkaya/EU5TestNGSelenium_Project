@@ -10,7 +10,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+//BasePage belogs to PageObjectModel in my framework that keeps common locators, methods and actions, ana sayfada olup da butun sayfalarda degismeyen ayni olan degismeyen elementler
+// bu benim web application icin unique locators and methods, baska projecde kullanamam aynilarini
 // abstract cunku object yaratmak istemiyorum baska classda sadece burda arak plani bilmemizi codun nasil clistigini abstarct class da umursama diyor
 public abstract class BasePage {   //we put the common methods and locators,   abstract class so we cannot create an object here
                             //BasePage in icine heryerden (About us ve other pagelerden ulasabildigimiz common WebElementleri atiyoruz)

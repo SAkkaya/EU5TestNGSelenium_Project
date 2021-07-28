@@ -32,17 +32,17 @@ public class SeleniumEasyCheckboxVerification {
         //Go to http://www.seleniumeasy.com/test/basic-checkbox-demo.html
         driver.get("http://www.seleniumeasy.com/test/basic-checkbox-demo.html");
 
-        //Verify “Success – Check box is checked” message is NOT displayed.
+        //VerifyContactInformationTest “Success – Check box is checked” message is NOT displayed.
         WebElement checkbox = driver.findElement(By.xpath("//div[@id='txtAge']"));
-        Assert.assertFalse(checkbox.isDisplayed(),"Verify “Success – Check box is checked” message is NOT displayed");
+        Assert.assertFalse(checkbox.isDisplayed(),"VerifyContactInformationTest “Success – Check box is checked” message is NOT displayed");
 
     //Click to checkbox under “Single Checkbox Demo” section
 
         driver.findElement(By.cssSelector("input#isAgeSelected")).click();
 
-    //Verify “Success – Check box is checked” message is displayed.
+    //VerifyContactInformationTest “Success – Check box is checked” message is displayed.
 
-        Assert.assertEquals(checkbox.getText(),"Success - Check box is checked","Verify “Success – Check box is checked” message is displayed" );
+        Assert.assertEquals(checkbox.getText(),"Success - Check box is checked","VerifyContactInformationTest “Success – Check box is checked” message is displayed" );
 
     }
 
@@ -53,7 +53,7 @@ public class SeleniumEasyCheckboxVerification {
 
         driver.get("http://www.seleniumeasy.com/test/basic-checkbox-demo.html");
 
-//        3. Verify “Check All” button text is “Check All”
+//        3. VerifyContactInformationTest “Check All” button text is “Check All”
             WebElement checkAll=driver.findElement(By.cssSelector("input#check1"));
 
             String checkAllValue= checkAll.getAttribute("value");
@@ -62,17 +62,17 @@ public class SeleniumEasyCheckboxVerification {
 //        4. Click to “Check All” button
             checkAll.click();
 
-//        5. Verify all check boxes are checked
+//        5. VerifyContactInformationTest all check boxes are checked
 
         List<WebElement> checkBoxElements = driver.findElements(By.className("cb1-element"));
 
         for (WebElement checkBoxElement : checkBoxElements) {
-            Assert.assertTrue(checkBoxElement.isSelected(), "Verify all check boxes are checked");
+            Assert.assertTrue(checkBoxElement.isSelected(), "VerifyContactInformationTest all check boxes are checked");
         }
 
-//        6. Verify button text changed to “Uncheck All”
+//        6. VerifyContactInformationTest button text changed to “Uncheck All”
 
-        Assert.assertEquals(checkAll.getAttribute("value"),"Uncheck All","Verify button text changed to “Uncheck All" );
+        Assert.assertEquals(checkAll.getAttribute("value"),"Uncheck All","VerifyContactInformationTest button text changed to “Uncheck All" );
 
 
     }
