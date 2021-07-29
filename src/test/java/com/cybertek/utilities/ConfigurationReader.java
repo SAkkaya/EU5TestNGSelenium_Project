@@ -21,6 +21,7 @@ public class ConfigurationReader {
             properties = new Properties();  //creating object from Properties Class
             // the values from the file input is loaded / fed in to the properties object
 
+           // FileInputStream==> loads the data in JAVA
             properties.load(input); // properties object has load() method that takes and loads key and values from Configuration Reader fil//lad
             //load store th data
             input.close();

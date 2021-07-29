@@ -104,7 +104,7 @@ public class TestBase {           // class  for not to repeat same methods, you 
 
         }
 
-        Thread.sleep(2000);
+      //  Thread.sleep(2000);
         Driver.closeDriver();
     }
 
