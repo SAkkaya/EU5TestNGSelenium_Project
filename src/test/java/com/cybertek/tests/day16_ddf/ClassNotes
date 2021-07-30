@@ -1,11 +1,23 @@
+<https://www.guru99.com/data-driven-testing.html>
 
+Data Driven Framework is an automation testing framework in which input values are read from data files
+and stored into variables in test scripts. It enables testers to build both positive and
+negative test cases into a single test. Input data in data driven framework can be stored in
+single or multiple data sources like .xls, .xml, .csv and databases.
+=============================================================================
+@Dataprovider (testng.annotations.)
+
+DataProvider helps with data-driven test cases that carry the same methods
+but can be run multiple times with different data sets.
+
+=============================================================================
 Class Notes-25
 
 Test code/script ----------------test data
 test data-->excel file,json,xml,csv,database,api
 
 In DDF(Data Driven Framework) we seperate test data and test code. we design our test code in a way that it can read the test data and execute tests base on it. Our test code will have the test steps. Thest input data will be in external sources. Our test data will decide how many times a test case runs.
-
+(What is Data Driven Test=> reunning a test with different set of data, such as login test by providing set of differnt password and username from an excel sheet)
 we use apache-poi dependencies to work with office(excel) files.
 
 ExcelUtil

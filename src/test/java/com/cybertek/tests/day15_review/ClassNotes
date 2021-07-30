@@ -21,7 +21,11 @@ So we don't need to copy/paste anymore. when we create the test we extend TestBa
 BasePage
 we locate all the common elements and functionalities for all the pages/modules here related to application(vytrack).
 All other pages that have those functionalities will extend the BasePage. it is application specific.
+================================================================
+BasePage => part of the POM, template page object for all pages (besides the login, login does not inherit the BasePage)
+        => unique to WebApplication, application specific, common locaters and action for the application
 
+TestBase=> contains properties and actions common to all tests ( etc. @Before and @After Methods)
 ================================================================
 XML RUNNERS
 
