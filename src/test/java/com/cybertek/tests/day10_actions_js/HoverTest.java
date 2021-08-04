@@ -2,6 +2,7 @@ package com.cybertek.tests.day10_actions_js;
 
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -9,6 +10,8 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import static org.testng.Assert.*;
 
 public class HoverTest {
 
@@ -52,7 +55,8 @@ public class HoverTest {
      * hover over each image in the website
      * verify each name:user text is displayed
      */
-    @Test
+
+    @Test(invocationCount =2 ) // executing same test multiple times
     public void test2() throws InterruptedException {
         driver.get("http://practice.cybertekschool.com/hovers");
 
@@ -69,7 +73,13 @@ public class HoverTest {
             String textXpath = "//h5[.='name: user"+i+"']";
             WebElement text1 = driver.findElement(By.xpath(textXpath));
             System.out.println(textXpath);
+
             Assert.assertTrue(text1.isDisplayed(),"verify user "+i+" is displayed");
+
+            /*import static org.testng.Assert.*;   STATIC IMPORT
+            assertEquals(text1.isDisplayed(),"verify user "+i+" is displayed");
+
+*/
 
         }
 
